@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>រៀនកូដ C++ សម្រាប់អ្នកចាប់ផ្តើមដំបូង</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col justify-between">
+
+    <header class="bg-gray-800 shadow-md sticky top-0 z-50 border-b border-cyan-500/30">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-cyan-400 flex items-center gap-2 animate__animated animate__fadeInLeft">
+                <span>💻</span> C++ Khmer Academy
+            </h1>
+            <nav class="space-x-6 hidden md:flex animate__animated animate__fadeInRight">
+                <a href="#home" class="hover:text-cyan-400 transition-colors duration-300">មេគង្គ</a>
+                <a href="#lessons" class="hover:text-cyan-400 transition-colors duration-300">មេរៀន</a>
+                <a href="#compiler" class="hover:text-cyan-400 transition-colors duration-300">សាកល្បងកូដ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="container mx-auto px-6 py-16 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6 animate__animated animate__bounceIn">
+            ចាប់ផ្តើមរៀនសរសេរកូដ <span class="text-cyan-400">C++</span> ពីដំបូងឡើយ!
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto mb-8 text-lg animate__animated animate__fadeIn animate__delay-1s">
+            វេបសាយនេះនឹងជួយអ្នកឱ្យយល់ដឹងពីមូលដ្ឋានគ្រឹះនៃភាសា C++ យ៉ាងងាយស្រួល ជាមួយឧទាហរណ៍ច្បាស់ៗ និងការអនុវត្តផ្ទាល់។
+        </p>
+        <a href="#lessons" class="bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold px-8 py-3 rounded-full shadow-lg shadow-cyan-500/50 transition-all duration-300 transform hover:scale-105 inline-block animate__animated animate__pulse animate__infinite">
+            ចូលរៀនឥឡូវនេះ
+        </a>
+    </section>
+
+    <main id="lessons" class="container mx-auto px-6 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div class="lg:col-span-1 bg-gray-800 p-6 rounded-2xl shadow-xl border border-gray-700 h-fit">
+            <h3 class="text-xl font-bold text-cyan-400 mb-4 border-b border-gray-700 pb-2">បញ្ជីមេរៀន</h3>
+            <div class="space-y-3">
+                <button onclick="changeLesson('intro')" class="w-full text-left p-3 rounded-xl bg-gray-700 hover:bg-cyan-900/40 border-l-4 border-cyan-500 transition-all duration-200 focus:outline-none">
+                    ១. សេចក្តីផ្តើមអំពី C++
+                </button>
+                <button onclick="changeLesson('variables')" class="w-full text-left p-3 rounded-xl bg-gray-800 hover:bg-cyan-900/40 border-l-4 border-transparent hover:border-cyan-500 transition-all duration-200 focus:outline-none">
+                    ២. Variables & Data Types
+                </button>
+                <button onclick="changeLesson('conditions')" class="w-full text-left p-3 rounded-xl bg-gray-800 hover:bg-cyan-900/40 border-l-4 border-transparent hover:border-cyan-500 transition-all duration-200 focus:outline-none">
+                    ៣. លក្ខខណ្ឌ (If...Else)
+                </button>
+            </div>
+        </div>
+
+        <div class="lg:col-span-2 bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700 relative overflow-hidden">
+            
+            <div id="lesson-content" class="animate__animated animate__fadeIn">
+                <h3 class="text-2xl font-bold text-white mb-4">១. សេចក្តីផ្តើមអំពី C++</h3>
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    C++ គឺជាភាសាសរសេរកម្មវិធី (Programming Language) ដ៏មានឥទ្ធិពល និងពេញនិយមបំផុតមួយក្នុងលោក ដែលត្រូវបានបង្កើតឡើងដោយលោក Bjarne Stroustrup។ វាត្រូវបានប្រើប្រាស់សម្រាប់បង្កើត ប្រព័ន្ធប្រតិបត្តិការ (OS), ហ្គេម (Games), និងកម្មវិធីធំៗជាច្រើន។
+                </p>
+                
+                <h4 class="text-lg font-semibold text-cyan-300 mb-2">ឧទាហរណ៍កូដដំបូង (Hello World):</h4>
+                <pre class="code-block p-4 rounded-xl font-mono text-sm shadow-inner mb-6 overflow-x-auto">
+<span class="text-green-400">#include &lt;iostream&gt;</span>
+<span class="text-blue-400">int</span> <span class="text-yellow-400">main</span>() {
+    <span class="text-purple-400">std::cout</span> &lt;&lt; <span class="text-orange-400">"Hello, World!"</span>;
+    <span class="text-blue-400">return</span> <span class="text-amber-500">0</span>;
+}</pre>
+            </div>
+
+            <div id="compiler" class="mt-8 border-t border-gray-700 pt-6">
+                <h4 class="text-lg font-semibold text-cyan-400 mb-3">🖥️ តំបន់សាកល្បងដំណើរការកូដ (Simulated Output)</h4>
+                <button onclick="runCode()" class="bg-green-500 hover:bg-green-600 text-gray-900 font-bold px-5 py-2 rounded-lg transition-all duration-200 transform active:scale-95 mb-4">
+                    ▶️ ចុចដើម្បី Run កូដខាងលើ
+                </button>
+                <div class="bg-black p-4 rounded-xl font-mono text-green-400 text-sm h-24 border border-gray-800 shadow-inner">
+                    <span class="text-gray-500">// លទ្ធផលនឹងបង្ហាញនៅទីនេះ...</span>
+                    <p id="terminal-output" class="mt-1 font-bold text-white"></p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-950 text-center py-6 border-t border-gray-800 mt-12 text-sm text-gray-500">
+        <p>© 2026 C++ Khmer Academy. រក្សាសិទ្ធិគ្រប់យ៉ាងដោយក្តីស្រឡាញ់។</p>
+    </footer>
+
+    <script>
+        // ទិន្នន័យមេរៀន
+        const lessonsData = {
+            intro: {
+                title: "១. សេចក្តីផ្តើមអំពី C++",
+                desc: "C++ គឺជាភាសាសរសេរកម្មវិធី (Programming Language) ដ៏មានឥទ្ធិពល និងពេញនិយមបំផុតមួយក្នុងលោក ដែលត្រូវបានបង្កើតឡើងដោយលោក Bjarne Stroustrup។ វាត្រូវបានប្រើប្រាស់សម្រាប់បង្កើត ប្រព័ន្ធប្រតិបត្តិការ (OS), ហ្គេម (Games), និងកម្មវិធីធំៗជាច្រើន។",
+                code: `#include &lt;iostream&gt;\nint main() {\n    std::cout &lt;&lt; "Hello, World!";\n    return 0;\n}`,
+                output: "Hello, World!"
+            },
+            variables: {
+                title: "២. Variables & Data Types",
+                desc: "Variable គឺជាកន្លែងសម្រាប់រក្សាទុកទិន្នន័យនៅក្នុង Memory។ នៅក្នុង C++ យើងត្រូវកំណត់ប្រភេទទិន្នន័យ (Data Type) ឱ្យបានច្បាស់លាស់ ដូចជា int (លេខគត់), double (លេខមានក្បៀស), string (អក្សរ) ជាដើម។",
+                code: `#include &lt;iostream&gt;\n#include &lt;string&gt;\nint main() {\n    int age = 20;\n    std::string name = "Sokha";\n    std::cout &lt;&lt; name &lt;&lt; " is " &lt;&lt; age &lt;&lt; " years old.";\n    return 0;\n}`,
+                output: "Sokha is 20 years old."
+            },
+            conditions: {
+                title: "៣. លក្ខខណ្ឌ (If...Else)",
+                desc: "យើងប្រើប្រាស់ If...Else សម្រាប់ធ្វើការសម្រេចចិត្តនៅក្នុងកម្មវិធី ដោយផ្អែកលើលក្ខខណ្ឌពិត (True) ឬ មិនពិត (False)។",
+                code: `#include &lt;iostream&gt;\nint main() {\n    int score = 75;\n    if (score >= 50) {\n        std::cout &lt;&lt; "You Pass!";\n    } else {\n        std::cout &lt;&lt; "You Fail!";\n    }\n    return 0;\n}`,
+                output: "You Pass!"
+            }
+        };
+
+        let currentOutput = "Hello, World!"; // លទ្ធផលលំនាំដើម
+
+        // មុខងារប្តូរមេរៀនពេលអ្នកប្រើចុច
+        function changeLesson(lessonKey) {
+            const lesson = lessonsData[lessonKey];
+            const contentDiv = document.getElementById('lesson-content');
+            
+            // ធ្វើឱ្យមានចលនាពេលប្តូរ (Fade Out រួច Fade In)
+            contentDiv.classList.remove('animate__fadeIn');
+            void contentDiv.offsetWidth; // Trigger reflow
+            contentDiv.classList.add('animate__fadeIn');
+
+            // ប្តូរខ្លឹមសារអក្សរ
+            contentDiv.innerHTML = `
+                <h3 class="text-2xl font-bold text-white mb-4">${lesson.title}</h3>
+                <p class="text-gray-300 mb-6 leading-relaxed">${lesson.desc}</p>
+                <h4 class="text-lg font-semibold text-cyan-300 mb-2">ឧទាហរណ៍កូដ:</h4>
+                <pre class="code-block p-4 rounded-xl font-mono text-sm shadow-inner mb-6 overflow-x-auto">${lesson.code}</pre>
+            `;
+
+            // អាប់ដេតលទ្ធផលសម្រាប់ប៊ូតុង Run
+            currentOutput = lesson.output;
+            document.getElementById('terminal-output').innerText = ""; // សម្អាត terminal ចាស់
+
+            // ប្តូរពណ៌ Active ប៊ូតុងឆ្វេងដៃ (Optional styling)
+            const buttons = document.querySelectorAll('#lessons button');
+            buttons.forEach(btn => btn.classList.remove('bg-gray-700', 'border-cyan-500'));
+            event.currentTarget.classList.add('bg-gray-700', 'border-cyan-500');
+        }
+
+        // មុខងារពេលចុចប៊ូតុង Run កូដ
+        function runCode() {
+            const outputText = document.getElementById('terminal-output');
+            outputText.innerText = "កំពុងដំណើរការ...";
+            
+            // បង្កើត Delay បន្តិចឱ្យដូចការ Run កូដមែនទែន
+            setTimeout(() => {
+                outputText.innerText = currentOutput;
+            }, 500);
+        }
+    </script>
+</body>
+</html>
